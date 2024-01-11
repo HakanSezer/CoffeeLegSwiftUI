@@ -24,7 +24,7 @@ struct SettingsView: View {
                             
                         }
                         .onChange(of: notify.isPermissionGranted) { _ in
-                            
+                            notify.toggleNotificationStatus()
                         }
                         
                         
@@ -88,8 +88,8 @@ struct SettingsView: View {
     }
 }
 
-    
-    #Preview {
-        SettingsView()
-    }
+
+#Preview {
+    SettingsView()
+}
 
