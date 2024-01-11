@@ -10,7 +10,6 @@ import UserNotifications
 
 class NotificationModel: ObservableObject {
     @Published var isPermissionGranted: Bool = true
-    
     /*
         init() {
                 checkNotificationPermission()
@@ -23,23 +22,12 @@ class NotificationModel: ObservableObject {
         }
         */
         
-        
-        
         func toggleNotificationStatus() {
             if !isPermissionGranted {
                 print("Bildirimler Kapatıldı.")
             } else {
-                requestNotificationPermission()
+                askPermission()
                 print("Bildirimler Açıldı.")
-            }
-        }
-        
-        func requestNotificationPermission() {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-                DispatchQueue.main.async {
-                    self.isPermissionGranted = success
-                    
-                }
             }
         }
         
@@ -47,7 +35,7 @@ class NotificationModel: ObservableObject {
         func askPermission() {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success {
-                    self.isPermissionGranted = true
+                    self.isPermissionGranted = success
                     
                 } else if let error = error {
                     DispatchQueue.main.async {
