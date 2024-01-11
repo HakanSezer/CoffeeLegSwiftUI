@@ -11,16 +11,20 @@ import UserNotifications
 
 
 // AppDelegate Notificitionç
-class AppDelegate: NSObject, UIApplicationDelegate,UNUserNotificationCenterDelegate {
-    func application( _ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
+class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+  var notificationModel = NotificationModel()
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             // Handle authorization result
+          DispatchQueue.main.async {
+            self.notificationModel.isPermissionGranted = granted
             if granted {
-                print("Bildirim izni verildi.")
+              print("Bildirim izni verildi.")
             }else if let error = error {
-                print("Bildirim izni alınmadı: \(error.localizedDescription)")
+              print("Bildirim izni alınmadı: \(error.localizedDescription)")
             }
+          }
         }
         application.registerForRemoteNotifications()
         UNUserNotificationCenter.current().delegate = self

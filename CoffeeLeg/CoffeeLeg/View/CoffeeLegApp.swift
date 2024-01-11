@@ -12,11 +12,12 @@ import UIKit
 @main
 struct CoffeeLegApp: App {
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appDelegate.notificationModel) // Burada bağlanıyor
         }
     }
-}
+}  
 

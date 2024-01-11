@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var seletedTab = 0
-    
+  @EnvironmentObject var notificationModel: NotificationModel // EnvironmentObject olarak kullanılıyor
+
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { allowed, error in
             if allowed {
@@ -62,8 +63,10 @@ struct ContentView: View {
             }
         .scrollIndicators(.never)
         .tint(.black)
-        
-        
+        .onAppear {
+                        notificationModel.checkNotificationPermission()
+                    }
+
         
         }
     }

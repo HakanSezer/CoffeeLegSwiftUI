@@ -27,6 +27,7 @@
 		34A4BC532B2A2F940002511A /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4BC522B2A2F940002511A /* HistoryData.swift */; };
 		34AF28632B2A42FB00D6A0F3 /* coffeeJS.json in Resources */ = {isa = PBXBuildFile; fileRef = 34AF28622B2A42FB00D6A0F3 /* coffeeJS.json */; };
 		34C1E5432B4EC89500915EFF /* CoffeeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C1E5422B4EC89500915EFF /* CoffeeAppDelegate.swift */; };
+		654A5B9F2B5056E3007B4DBF /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A5B9E2B5056E2007B4DBF /* Launch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		34A4BC522B2A2F940002511A /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
 		34AF28622B2A42FB00D6A0F3 /* coffeeJS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffeeJS.json; sourceTree = "<group>"; };
 		34C1E5422B4EC89500915EFF /* CoffeeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeAppDelegate.swift; sourceTree = "<group>"; };
+		654A5B9E2B5056E2007B4DBF /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				3445B6302B2F11C2000DD390 /* CoffeeDetailView.swift */,
 				34A4BC432B2A18000002511A /* CoffeeView.swift */,
+				654A5B9E2B5056E2007B4DBF /* Launch.swift */,
 			);
 			path = CoffeeView;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				34A4BC532B2A2F940002511A /* HistoryData.swift in Sources */,
 				34A4BC442B2A18000002511A /* CoffeeView.swift in Sources */,
 				3445B6312B2F11C2000DD390 /* CoffeeDetailView.swift in Sources */,
+				654A5B9F2B5056E3007B4DBF /* Launch.swift in Sources */,
 				34A4BC322B2A15A10002511A /* CoffeeLegApp.swift in Sources */,
 				345E49142B4B3E88006D402A /* SettingsView.swift in Sources */,
 				347DC3682B4C7EF30081C9F0 /* SafariView.swift in Sources */,
@@ -329,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -386,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -402,18 +406,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoffeeLeg/CoffeeLeg.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeLeg/Preview Content\"";
-				DEVELOPMENT_TEAM = KF37U55MQ8;
+				DEVELOPMENT_TEAM = Y9XJT8FRMC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeLeg/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +428,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hakansezer.CoffeeLeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -433,18 +441,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoffeeLeg/CoffeeLeg.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoffeeLeg/Preview Content\"";
-				DEVELOPMENT_TEAM = KF37U55MQ8;
+				DEVELOPMENT_TEAM = Y9XJT8FRMC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeLeg/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,6 +463,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hakansezer.CoffeeLeg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
