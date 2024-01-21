@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var notify = NotificationModel()
+    
+    @EnvironmentObject var notificationModel: NotificationModel // EnvironmentObject olarak kullanılıyor
+    
+    @State private var checkPermission: Bool = false
+    
     
     @State private var isMail = false
     @State private var isInstagram = false
@@ -19,16 +23,26 @@ struct SettingsView: View {
             ZStack {
                 List() {
                     Section(header: Text("Notifications")) {
-                        Toggle(isOn: $notify.isPermissionGranted) {
+                        Toggle(isOn: $checkPermission) {
                             Text("Enable Notifications")
                             
                         }
-                        .onChange(of: notify.isPermissionGranted) { _ in
-                            notify.toggleNotificationStatus()
+                        .onChange(of: checkPermission) { newValue in
+                            notificationModel.getPermission()
+                            
+                            // Burada kaldık.
+                           
+                             if !newValue {
+                             // Kullanıcı Toggle'ı kapattığında, Ayarlar sayfasına yönlendir
+                             print("\(Thread.current)")
+                                 
+                             
+                             notificationModel.openAppSettings()
+                             }else {
+                             print("Gel")
+                             notificationModel.openAppSettings()
+                             }
                         }
-                        
-                        
-                        
                     }
                     
                     Section(header: Text("Policy")) {
@@ -55,6 +69,16 @@ struct SettingsView: View {
                 .preferredColorScheme(.light)
             }
             .navigationTitle("Settings")
+        }
+        .onAppear {
+            notificationModel.askPermission()
+            // Ayarlar sayfasına her dönüldüğünde bildirim izin durumunu kontrol et
+            notificationModel.checkPermissions { granted in
+                if !granted {
+                    notificationModel.openAppSettings()
+                    checkPermission = false
+                }
+            }
         }
         .sheet(isPresented: $isMail) {
             MailComposeView()
@@ -86,6 +110,22 @@ struct SettingsView: View {
                 }
         }
     }
+    /*
+     func checkNotificationPermission() {
+     UNUserNotificationCenter.current().getNotificationSettings { settings in
+     DispatchQueue.main.async {
+     notificationModel.isPermissionGranted = settings.authorizationStatus == .authorized
+     if settings.authorizationStatus == .denied {
+     // Kullanıcıya bildirim izinlerini Ayarlar'dan açması için bir uyarı göster
+     // ve openAppSettings fonksiyonunu çağırarak Ayarlar'a yönlendir
+     }else {
+     print("Neredesin allahsız")
+     }
+     // Diğer durumlar için ek mantık burada olabilir
+     }
+     }
+     }
+     */
 }
 
 

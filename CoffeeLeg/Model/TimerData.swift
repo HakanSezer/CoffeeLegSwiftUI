@@ -20,8 +20,11 @@ class StopWatch: ObservableObject {
                 self.counter -= 1
             }else {
                 self.stop()
-                if self.notificationModels.isPermissionGranted {
-                    self.notificationModels.sendPushNotification(title: "Coffee Time", body: "Your Coffee is Ready!")
+                self.notificationModels.getPermission()
+                self.notificationModels.checkPermissions { granted in
+                    if granted {
+                        self.notificationModels.sendPushNotification(title: "Coffee Time", body: "Your Coffee is Ready!")
+                    }
                 }
             }
         })

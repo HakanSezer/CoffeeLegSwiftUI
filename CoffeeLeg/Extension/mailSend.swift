@@ -9,6 +9,7 @@ import Foundation
 import MessageUI
 import SwiftUI
 
+// GastureTap Email.
 struct MailComposeView: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIViewController
 

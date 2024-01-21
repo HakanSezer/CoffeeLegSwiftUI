@@ -16,6 +16,7 @@ struct CoffeeLegApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appDelegate.notificationModel)
         }
     }
 }
