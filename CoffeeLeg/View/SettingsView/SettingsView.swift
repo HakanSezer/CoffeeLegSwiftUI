@@ -23,31 +23,21 @@ struct SettingsView: View {
             ZStack {
                 List() {
                     Section(header: Text("Notifications")) {
-                        Toggle(isOn: $checkPermission) {
-                            Text("Enable Notifications")
-                            
-                        }
-                        .onChange(of: checkPermission) { newValue in
-                            notificationModel.getPermission()
-                            
-                            // Burada kaldık.
-                            
-                            if !newValue {
-                                // Kullanıcı Toggle'ı kapattığında, Ayarlar sayfasına yönlendir
-                                print("\(Thread.current)")
-                                
+                        Button(action: {
+                            withAnimation {
+                                checkPermission.toggle()
+                            }
+                        }) {
+                            HStack {
+                                Text("Enable Notifications")
                             }
                         }
                     }
                     .alert(isPresented: $checkPermission) {
-
-                        Alert(
-                            title: Text("Error"),
-                            message: Text("You cannot change the settings from here"),
-                            primaryButton: .default(Text("Notification")) {
-                                notificationModel.openAppSettings()
-                            },
-                            secondaryButton: .cancel()
+                        Alert(title: Text("Error"), message: Text("You cannot change the settings from here."), primaryButton: .default(Text("Notification")){
+                            notificationModel.openAppSettings()
+                        },
+                              secondaryButton: .cancel()
                         )
                     }
                     
@@ -75,16 +65,6 @@ struct SettingsView: View {
                 .preferredColorScheme(.light)
             }
             .navigationTitle("Settings")
-        }
-        .onAppear {
-            notificationModel.askPermission()
-            // Ayarlar sayfasına her dönüldüğünde bildirim izin durumunu kontrol et
-            notificationModel.checkPermissions { granted in
-                if !granted {
-                    notificationModel.openAppSettings()
-                    checkPermission = false
-                }
-            }
         }
         .sheet(isPresented: $isMail) {
             MailComposeView()
@@ -116,24 +96,7 @@ struct SettingsView: View {
                 }
         }
     }
-    /*
-     func checkNotificationPermission() {
-     UNUserNotificationCenter.current().getNotificationSettings { settings in
-     DispatchQueue.main.async {
-     notificationModel.isPermissionGranted = settings.authorizationStatus == .authorized
-     if settings.authorizationStatus == .denied {
-     // Kullanıcıya bildirim izinlerini Ayarlar'dan açması için bir uyarı göster
-     // ve openAppSettings fonksiyonunu çağırarak Ayarlar'a yönlendir
-     }else {
-     print("Neredesin allahsız")
-     }
-     // Diğer durumlar için ek mantık burada olabilir
-     }
-     }
-     }
-     */
 }
-
 
 #Preview {
     SettingsView()

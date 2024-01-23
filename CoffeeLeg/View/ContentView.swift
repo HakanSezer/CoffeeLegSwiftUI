@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var seletedTab = 0
-    @EnvironmentObject var notificationModel: NotificationModel // EnvironmentObject olarak kullanılıyor
+    
     
     init() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { allowed, error in
