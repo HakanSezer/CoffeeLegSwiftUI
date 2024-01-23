@@ -31,18 +31,24 @@ struct SettingsView: View {
                             notificationModel.getPermission()
                             
                             // Burada kaldık.
-                           
-                             if !newValue {
-                             // Kullanıcı Toggle'ı kapattığında, Ayarlar sayfasına yönlendir
-                             print("\(Thread.current)")
-                                 
-                             
-                             notificationModel.openAppSettings()
-                             }else {
-                             print("Gel")
-                             notificationModel.openAppSettings()
-                             }
+                            
+                            if !newValue {
+                                // Kullanıcı Toggle'ı kapattığında, Ayarlar sayfasına yönlendir
+                                print("\(Thread.current)")
+                                
+                            }
                         }
+                    }
+                    .alert(isPresented: $checkPermission) {
+
+                        Alert(
+                            title: Text("Error"),
+                            message: Text("You cannot change the settings from here"),
+                            primaryButton: .default(Text("Notification")) {
+                                notificationModel.openAppSettings()
+                            },
+                            secondaryButton: .cancel()
+                        )
                     }
                     
                     Section(header: Text("Policy")) {

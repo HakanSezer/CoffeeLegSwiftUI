@@ -67,7 +67,10 @@ class NotificationModel: ObservableObject {
         }
         
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(settingsUrl)
+            DispatchQueue.main.async {
+                UIApplication.shared.open(settingsUrl)
+            }
+           
         } else {
             UIApplication.shared.openURL(settingsUrl)
         }
