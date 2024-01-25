@@ -20,6 +20,7 @@ class StopWatch: ObservableObject {
                 self.counter -= 1
             }else {
                 self.stop()
+                //Push Notification Triggering
                 self.notificationModels.getPermission()
                 self.notificationModels.checkPermissions { granted in
                     if granted {

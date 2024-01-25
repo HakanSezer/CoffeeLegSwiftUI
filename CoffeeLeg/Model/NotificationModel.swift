@@ -16,6 +16,7 @@ class NotificationModel: ObservableObject {
         notifCompletion = completion
     }
     
+    //Push Notification Triggering.
     func getPermission() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             switch settings.authorizationStatus {
@@ -32,6 +33,8 @@ class NotificationModel: ObservableObject {
             }
         }
     }
+     
+    /*
     // Notification için onay almak için kullanılır.
     func askPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
@@ -42,7 +45,24 @@ class NotificationModel: ObservableObject {
             }
         }
     }
+    */
     
+    func askPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { allowed, error in
+            if allowed {
+                // register for remote push notification
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+                print("Push notification allowed by user")
+            } else {
+                print("Error while requesting push notification permission. Error (error)")
+            }
+        }
+        
+    }
+    
+    // Push Notification Text
     func sendPushNotification(title: String, body: String) {
         let content = UNMutableNotificationContent()
         content.title = title

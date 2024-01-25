@@ -20,7 +20,7 @@ struct MailComposeView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
-            mailComposeViewController.setToRecipients(["hakanszer1@gmail.com"])
+            mailComposeViewController.setToRecipients(["info@coffeeleg.com"])
             mailComposeViewController.setSubject("Feedback")
             mailComposeViewController.mailComposeDelegate = context.coordinator
             uiViewController.present(mailComposeViewController, animated: true, completion: nil)

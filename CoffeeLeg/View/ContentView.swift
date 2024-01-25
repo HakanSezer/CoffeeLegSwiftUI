@@ -62,8 +62,6 @@ struct ContentView: View {
                     .tag(3)
             }
             .scrollIndicators(.never)
-            .tint(.black)
-            
         }
     }
 }

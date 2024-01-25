@@ -17,6 +17,8 @@ struct CoffeeLegApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(appDelegate.notificationModel)
+            //Dark mode off
+                .preferredColorScheme(.light)
         }
     }
 }
