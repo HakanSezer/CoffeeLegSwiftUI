@@ -12,7 +12,7 @@ import UserNotifications
 
 // AppDelegate Notificitionç
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    
+  var notificationModel = NotificationModel()
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
         application.registerForRemoteNotifications()
