@@ -52,7 +52,7 @@ struct CoffeeDetailView: View {
                             .padding()
                     }
                     .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.37)
-                    .offset(y: -150)
+                    .offset(y: -140)
                 }
             }
         }
