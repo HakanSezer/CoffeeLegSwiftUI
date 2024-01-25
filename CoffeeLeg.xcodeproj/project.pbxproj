@@ -16,7 +16,6 @@
 		347DC35E2B4C6EFD0081C9F0 /* MobileAppPrivaryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DC35D2B4C6EFD0081C9F0 /* MobileAppPrivaryPolicy.swift */; };
 		347DC3682B4C7EF30081C9F0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DC3672B4C7EF30081C9F0 /* SafariView.swift */; };
 		347DC36A2B4C865F0081C9F0 /* mailSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347DC3692B4C865F0081C9F0 /* mailSend.swift */; };
-		34A0B5022B5D9BFB00D03ADD /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0B5012B5D9BFB00D03ADD /* Launch.swift */; };
 		34A4BC322B2A15A10002511A /* CoffeeLegApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4BC312B2A15A10002511A /* CoffeeLegApp.swift */; };
 		34A4BC342B2A15A10002511A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4BC332B2A15A10002511A /* ContentView.swift */; };
 		34A4BC362B2A15A30002511A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34A4BC352B2A15A30002511A /* Assets.xcassets */; };
@@ -28,6 +27,7 @@
 		34A4BC532B2A2F940002511A /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4BC522B2A2F940002511A /* HistoryData.swift */; };
 		34AF28632B2A42FB00D6A0F3 /* coffeeJS.json in Resources */ = {isa = PBXBuildFile; fileRef = 34AF28622B2A42FB00D6A0F3 /* coffeeJS.json */; };
 		34C1E5432B4EC89500915EFF /* CoffeeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C1E5422B4EC89500915EFF /* CoffeeAppDelegate.swift */; };
+		34D138B32B62A8830009C8CA /* LaunchScreenCoffee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D138B22B62A8830009C8CA /* LaunchScreenCoffee.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,6 @@
 		347DC3692B4C865F0081C9F0 /* mailSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailSend.swift; sourceTree = "<group>"; };
 		347DC36B2B4C9EA70081C9F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		349F93642B4DBF670060BBC7 /* CoffeeLeg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeLeg.entitlements; sourceTree = "<group>"; };
-		34A0B5012B5D9BFB00D03ADD /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		34A4BC2E2B2A15A10002511A /* CoffeeLeg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeLeg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34A4BC312B2A15A10002511A /* CoffeeLegApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLegApp.swift; sourceTree = "<group>"; };
 		34A4BC332B2A15A10002511A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		34A4BC522B2A2F940002511A /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
 		34AF28622B2A42FB00D6A0F3 /* coffeeJS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffeeJS.json; sourceTree = "<group>"; };
 		34C1E5422B4EC89500915EFF /* CoffeeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeAppDelegate.swift; sourceTree = "<group>"; };
+		34D138B22B62A8830009C8CA /* LaunchScreenCoffee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCoffee.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			children = (
 				3445B6302B2F11C2000DD390 /* CoffeeDetailView.swift */,
 				34A4BC432B2A18000002511A /* CoffeeView.swift */,
-				34A0B5012B5D9BFB00D03ADD /* Launch.swift */,
+				34D138B22B62A8830009C8CA /* LaunchScreenCoffee.storyboard */,
 			);
 			path = CoffeeView;
 			sourceTree = "<group>";
@@ -247,6 +247,7 @@
 				34A4BC392B2A15A30002511A /* Preview Assets.xcassets in Resources */,
 				34A4BC362B2A15A30002511A /* Assets.xcassets in Resources */,
 				34AF28632B2A42FB00D6A0F3 /* coffeeJS.json in Resources */,
+				34D138B32B62A8830009C8CA /* LaunchScreenCoffee.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +268,6 @@
 				34A4BC532B2A2F940002511A /* HistoryData.swift in Sources */,
 				34A4BC442B2A18000002511A /* CoffeeView.swift in Sources */,
 				3445B6312B2F11C2000DD390 /* CoffeeDetailView.swift in Sources */,
-				34A0B5022B5D9BFB00D03ADD /* Launch.swift in Sources */,
 				34A4BC322B2A15A10002511A /* CoffeeLegApp.swift in Sources */,
 				345E49142B4B3E88006D402A /* SettingsView.swift in Sources */,
 				347DC3682B4C7EF30081C9F0 /* SafariView.swift in Sources */,
@@ -416,6 +416,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenCoffee.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -448,6 +449,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenCoffee.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
