@@ -12,8 +12,6 @@ struct CoffeeTimeView: View {
     @ObservedObject var stopWatch = StopWatch()
     @State private var isToggle: Bool = true
     
-    var notificationModel = NotificationModel()
-    
     var body: some View {
         
         // Dışarıdaki rengi ayarlamak için kullanıyorum.
@@ -48,7 +46,6 @@ struct CoffeeTimeView: View {
             .frame(maxWidth: 500)
             .padding(20)
             .offset(y:-130)
-            
             
             VStack {
                 Spacer()
@@ -90,7 +87,7 @@ struct CoffeeTimeView: View {
                         Button("Reset") {
                             isToggle = true
                             self.stopWatch.reset()
-                        }//: ZStack
+                        }
                         .foregroundColor(.white)
                         .font(.title2)
                     }

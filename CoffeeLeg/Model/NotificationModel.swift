@@ -19,6 +19,7 @@ class NotificationModel: ObservableObject {
     //Push Notification Triggering.
     func getPermission() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
+            //Toggle Enable Notification for configration
             switch settings.authorizationStatus {
             case .notDetermined:
                 self.notifCompletion?(false)
@@ -46,7 +47,6 @@ class NotificationModel: ObservableObject {
         }
     }
     */
-    
     func askPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { allowed, error in
             if allowed {
@@ -72,13 +72,15 @@ class NotificationModel: ObservableObject {
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         
         UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
+            //if error = error
+            if error != nil {
                 print("Push bildirimi gönderilirken hata oluştu: (error.localizedDescription)")
             } else {
                 print("Push bildirimi başarıyla gönderildi.")
             }
         }
     }
+    //UIKit
     // Settings gider.
     func openAppSettings() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),

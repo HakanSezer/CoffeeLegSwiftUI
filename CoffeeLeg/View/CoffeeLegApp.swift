@@ -11,6 +11,7 @@ import UIKit
 
 @main
 struct CoffeeLegApp: App {
+    //UIKit
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     
     var body: some Scene {

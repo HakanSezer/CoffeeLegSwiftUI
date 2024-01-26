@@ -33,7 +33,6 @@ struct KVKKView: View {
                         }
                         .frame(width: UIScreen.main.bounds.width * 0.84, height: UIScreen.main.bounds.height * 0.54)
                     }
-                    
                 }
             }
         }

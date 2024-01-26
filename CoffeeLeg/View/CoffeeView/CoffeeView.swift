@@ -37,7 +37,6 @@ struct CoffeeView: View {
                 .preferredColorScheme(.light)
                 .cornerRadius(20)
                 .padding()
-                
             }
             .listStyle(PlainListStyle())
             .navigationBarTitle("Coffee", displayMode: .large)

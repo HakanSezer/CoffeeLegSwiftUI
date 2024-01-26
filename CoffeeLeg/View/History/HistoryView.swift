@@ -32,15 +32,11 @@ struct HistoryView: View {
                                     Text(History)
                                         .frame(width: UIScreen.main.bounds.width * 0.9)
                                         .padding()
-                                    
                                 }
                             }
                             .offset(y: 40)
                             .padding(.bottom, 140)
                     }
-                    
-                    
-                    
                 }
             }
             .ignoresSafeArea()
