@@ -22,7 +22,8 @@ struct HistoryView: View {
                         ZStack {
                             Ellipse()
                                 .fill(LinearGradient(gradient: Gradient(colors: [.colorTestThree, .colorTestTwo]), startPoint: .top, endPoint: .bottom))
-                                .frame(width: 500)
+                            //6.7, 6.1 and 5.5
+                                .frame(width: UIScreen.main.bounds.width * 1.3)
                             
                            VStack {
                                 Text("History")
@@ -35,7 +36,7 @@ struct HistoryView: View {
                                 }
                             }
                             .offset(y: 40)
-                            .padding(.bottom, 140)
+                            .padding(.bottom, 125)
                     }
                 }
             }

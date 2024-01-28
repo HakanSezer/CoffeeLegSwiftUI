@@ -73,7 +73,6 @@
 			children = (
 				3445B6302B2F11C2000DD390 /* CoffeeDetailView.swift */,
 				34A4BC432B2A18000002511A /* CoffeeView.swift */,
-				34D138B22B62A8830009C8CA /* LaunchScreenCoffee.storyboard */,
 			);
 			path = CoffeeView;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 		34A4BC492B2A2B2D0002511A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				34D138B22B62A8830009C8CA /* LaunchScreenCoffee.storyboard */,
 				34A4BC312B2A15A10002511A /* CoffeeLegApp.swift */,
 				34A4BC332B2A15A10002511A /* ContentView.swift */,
 				347DC3622B4C79730081C9F0 /* SettingsView */,

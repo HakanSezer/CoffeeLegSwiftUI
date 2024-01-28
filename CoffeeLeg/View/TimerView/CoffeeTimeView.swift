@@ -44,8 +44,8 @@ struct CoffeeTimeView: View {
                 }
             }
             .frame(maxWidth: 500)
-            .padding(20)
-            .offset(y:-130)
+            .padding(25)
+            .offset(y:-120)
             
             VStack {
                 Spacer()
@@ -94,7 +94,7 @@ struct CoffeeTimeView: View {
                 }
                 .padding()
                 // Timer süresini ayarlamak için kullanılmıştır.
-                Slider(value: $stopWatch.counter, in: 1...600, step: 1)
+                Slider(value: $stopWatch.counter, in: 0...600, step: 1)
                     .padding()
                     .frame(width: 300)
               
