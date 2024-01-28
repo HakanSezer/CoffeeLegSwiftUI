@@ -14,7 +14,7 @@ struct CoffeeDetailView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // ArkaPlan Rengi
+                // Backroaund Color
                 Rectangle()
                     .fill(LinearGradient(gradient: Gradient(colors: [.colorTestThree, .colorTestTwo]), startPoint: .top, endPoint: .bottom))
                     .ignoresSafeArea()
@@ -34,9 +34,10 @@ struct CoffeeDetailView: View {
                             Image("\(coffee.image)")
                                 .resizable()
                                 .foregroundColor(.blue)
-                                .frame(width: 160,height: 160)
+                                .frame(width: UIScreen.main.bounds.width * 0.34,height: UIScreen.main.bounds.height * 0.2)
+                                //.frame(width: 160, height: 160)
                                 
-                        }.offset(y: -140)
+                        }.offset(y: -135)
                       
                             VStack {
                                 Text(coffee.name)
@@ -44,15 +45,15 @@ struct CoffeeDetailView: View {
                                 Text(coffee.sertlik)
                                     .foregroundColor(.secondary)
                             }
-                            .offset(y: -140)
+                            .offset(y: -130)
                         }
                    
                     ScrollView(.vertical, showsIndicators: false) {
                         Text(coffee.aciklama)
                             .padding()
                     }
-                    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.37)
-                    .offset(y: -140)
+                    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.33)
+                    .offset(y: -130)
                 }
             }
         }
@@ -60,5 +61,5 @@ struct CoffeeDetailView: View {
 }
 
 #Preview {
-    CoffeeDetailView(coffee: CoffeLegModel(id:"Espresso" , name:"Espresso" , sertlik: "Orta", aciklama:  "Espresso, yoğun ve konsantre bir kahve türüdür. İtalyanca kökenli bir terim olan espresso, hızlı veya hemen anlamına gelir. Bu kahve türü, basınçlı su kullanılarak öğütülmüş kahve çekirdeklerinden elde edilir.\r \rİşte bir espresso yapımının genel adımları:\r \rÇekirdek Seçimi ve Öğütme:\r  \rKaliteli bir espresso yapmak için taze kahve çekirdekleri seçilmeli ve kullanılmadan hemen önce öğütülmelidir. Genellikle ince öğütülmüş kahve kullanılır.\r \rDozaj: Standart bir espresso shot için genellikle yaklaşık 7 ila 9 gram kahve kullanılır.\r \rPresleme (Tamping): Öğütülmüş kahve, espresso makinesinin portafilter'ına konulur ve özel bir alet kullanılarak sıkıştırılır (preslenir). Bu adım, kahvenin suyun baskısı altında homojen bir şekilde çıkmasını sağlar.\r \rEspresso Makinesi Kullanımı:\r  \rPortafilter, espresso makinesine yerleştirilir ve su yüksek basınç altında çekirdeklerden geçirilir. Bu, kısa sürede yoğun, aromatik bir kahve elde etmenizi sağlar.\r \rExtraction (Çekilme):\r \rEspresso, genellikle 25 ila 30 saniye arasında bir süre içinde çekilir. Bu süre, çekirdek türüne, öğütme derecesine ve kullanılan makineye bağlı olarak değişebilir.\r \rSonuç olarak, espresso küçük bir hacimde, yoğun bir lezzet profiline sahip olan ve genellikle tek bir yudumda içilen bir kahve türüdür. Ayrıca, birçok kahve içkisinin temelini oluşturan bir bileşen olarak da kullanılır, örneğin cappuccino, latte gibi kahve içeceklerinin temelini oluşturur.", image: "Espresso"))
+    CoffeeDetailView(coffee: CoffeLegModel(id:"Espresso" , name:"Espresso" , sertlik: "Middle", aciklama:  "Espresso is a dense and concentrated type of coffee. A term of Italian origin, espresso means quickly or immediately. This type of coffee is made from coffee beans ground using pressurized water.\r \rHere are the general steps in making an espresso:\rBean Selection and Grinding:\r \rTo make a quality espresso, fresh coffee beans should be selected and ground just before use. Finely ground coffee is usually used.\r \rDosage: About 7 to 9 grams of coffee is usually used for a standard espresso shot.\r \rPressing (Tamping): The ground coffee is placed in the portafilter of the espresso machine and compressed (pressed) using a special tool. This step ensures that the coffee comes out homogeneously under the pressure of the water.\r \rUsing the Espresso Machine:\r \rThe portafilter is placed in the espresso machine and water is passed through the beans under high pressure. This results in a dense, aromatic coffee in a short time.\r \rExtraction:\r \rEspresso is usually extracted over a period of between 25 and 30 seconds. This time can vary depending on the type of bean, the degree of grinding and the machine used.\r \rIn conclusion, espresso is a type of coffee with a small volume, an intense flavor profile and is usually drunk in a single sip. It is also used as a base ingredient in many coffee drinks, such as cappuccino and latte.", image: "Espresso"))
 }
