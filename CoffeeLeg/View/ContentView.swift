@@ -61,11 +61,12 @@ struct ContentView: View {
                     }
                     .tag(3)
             }
+            .accentColor(.black)
             .scrollIndicators(.never)
-            .tint(.black)
         }
     }
 }
+
 
 #Preview {
     ContentView()

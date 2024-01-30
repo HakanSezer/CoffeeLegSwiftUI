@@ -41,6 +41,7 @@ struct CoffeeView: View {
             .listStyle(PlainListStyle())
             .navigationBarTitle("Coffee", displayMode: .large)
         }
+        .accentColor(.white)
     }
 }
 #Preview {
